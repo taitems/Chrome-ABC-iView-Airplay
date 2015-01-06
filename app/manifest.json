@@ -1,0 +1,53 @@
+{
+    "name": "__MSG_appName__",
+    "version": "0.0.3",
+    "manifest_version": 2,
+    "description": "__MSG_appDescription__",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "scripts/chromereload.js",
+            "scripts/background.js"
+        ]
+    },
+    "externally_connectable": {
+        "matches": [
+            "http://iview.abc.net.au/*",
+            "https://iview.abc.net.au/*"
+        ]
+    },
+    "web_accessible_resources": [
+        "scripts/inject.js"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content_script.js"
+            ],
+            "css": [
+                "styles/content_script.css"
+            ],
+            "matches": [
+                "http://iview.abc.net.au/*",
+                "https://iview.abc.net.au/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "page_action": {
+        "default_icon": {
+            "19": "images/icon-19.png",
+            "38": "images/icon-38.png"
+        },
+        "default_title": "Chrome ABC iView Airplay",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "http://iview.abc.net.au/*",
+        "https://iview.abc.net.au/*"
+    ]
+}

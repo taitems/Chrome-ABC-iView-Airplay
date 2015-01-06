@@ -1,0 +1,7 @@
+.airplay {
+	-webkit-transition: .2s opacity ease-in-out;
+	transition: .2s opacity ease-in-out;
+}
+.airplay.airplay-disabled {
+	opacity: .3;
+}
