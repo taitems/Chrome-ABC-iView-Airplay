@@ -43,7 +43,13 @@ var airplayPlugin = (function() {
 		// handle success
 		var filepath = document.body.getAttribute("data-filepath");
 		alert(filepath);
-		
+
+		var xhr = new XMLHttpRequest();
+		// xhr.onreadystatechange = handleStateChange; // Implemented elsewhere.
+		// xhr.open("get", chrome.extension.getURL('/config_resources/config.json'), true);
+		xhr.open("get", "http://localhost:1337/api/play/" + filepath, true);
+		xhr.send();
+
 	};
 
 	var injectScript = function() {
